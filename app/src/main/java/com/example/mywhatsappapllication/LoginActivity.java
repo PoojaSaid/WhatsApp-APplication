@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private FirebaseUser currentUser;
+//    private FirebaseUser currentUser;
     private Button loginButton, phoneButton;
     private EditText userEmail, userPassword;
     private TextView needNewAccountLink, forgetPasswordLink;
@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Get current user
-        currentUser = mAuth.getCurrentUser();
+//        currentUser = mAuth.getCurrentUser();
         needNewAccountLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,18 +98,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (currentUser != null) {
-            sendUserToMainActivity();
-        }
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        if (currentUser != null) {
+//            sendUserToMainActivity();
+//        }
+//    }
 
     private void sendUserToMainActivity() {
-        Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(loginIntent);
+        Intent registerToMainIntent = new Intent(LoginActivity.this, MainActivity.class);
+
+        //not go back to login screen after successful login
+        registerToMainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(registerToMainIntent);
+        finish();
     }
+
 
     private void sendUserToRegisterActivity() {
         Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
