@@ -10,4 +10,6 @@
     <string name="password">Password.....</string>
     <string name="email">Email.....</string>
     <string name="username">username</string>
+    <string name="create_group">Create Group</string>
+    <string name="group_chat_message">Write your message here.........</string>
 </resources>

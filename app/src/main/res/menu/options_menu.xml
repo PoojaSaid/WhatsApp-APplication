@@ -7,6 +7,11 @@
         app:showAsAction="never"/>
 
     <item
+        android:id="@+id/main_create_group"
+        android:title="@string/create_group"
+        app:showAsAction="never"/>
+
+    <item
         android:id="@+id/main_setting_option"
         android:title="@string/settings"
         app:showAsAction="never"/>

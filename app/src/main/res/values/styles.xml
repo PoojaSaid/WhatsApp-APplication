@@ -7,4 +7,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ALertDialog" parent="Theme.MaterialComponents.Light.Dialog"></style>
+
 </resources>
