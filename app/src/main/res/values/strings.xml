@@ -12,4 +12,5 @@
     <string name="username">username</string>
     <string name="create_group">Create Group</string>
     <string name="group_chat_message">Write your message here.........</string>
+    <string name="phoneNumberMessage">Write phone number here............</string>
 </resources>
