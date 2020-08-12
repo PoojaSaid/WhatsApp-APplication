@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class FindFriendActivity extends AppCompatActivity {
         setSupportActionBar(mToolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("FInd Friends");
+        getSupportActionBar().setTitle("Find Friends");
 
     }
 
@@ -67,9 +68,10 @@ public class FindFriendActivity extends AppCompatActivity {
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                String visit_user_id =  getRef(position).getKey();
-                                Intent profileIntent = new Intent(FindFriendActivity.this,ProfileActivity.class);
-                                profileIntent.putExtra("visit_user_id",visit_user_id);
+                                String visit_user_id = getRef(position).getKey();
+                                Log.d("FindFriendActivity", visit_user_id);
+                                Intent profileIntent = new Intent(FindFriendActivity.this, ProfileActivity.class);
+                                profileIntent.putExtra("visit_user_id", visit_user_id);
                                 startActivity(profileIntent);
                             }
                         });
@@ -88,7 +90,6 @@ public class FindFriendActivity extends AppCompatActivity {
         findFriendsRecyclerList.setAdapter(adapter);
         adapter.startListening();
     }
-
 
 
     public static class FindFriendViewHolder extends RecyclerView.ViewHolder {
